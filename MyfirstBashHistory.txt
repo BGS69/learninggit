@@ -1,0 +1,572 @@
+
+SpackmaB@2H106129H MINGW64 ~
+$ cd /c
+
+SpackmaB@2H106129H MINGW64 /c
+$ pwd
+/c
+
+SpackmaB@2H106129H MINGW64 /c
+$ dir
+$Recycle.Bin  BOOTNXT                   MSOCache        Program\ Files\ (x86)  Support
+_My\ Data     BOOTSECT.BAK              My\ Data        ProgramData            swapfile.sys
+apps          Documents\ and\ Settings  pagefile.sys    Recovery               System\ Volume\ Information
+boot          hiberfil.sys              PerfLogs        SfDevCluster           Users
+bootmgr       Intel                     Program\ Files  smsbootsect.bak        Windows
+
+SpackmaB@2H106129H MINGW64 /c
+$ cd /mydata
+bash: cd: /mydata: No such file or directory
+
+SpackmaB@2H106129H MINGW64 /c
+$ cd /my data
+bash: cd: too many arguments
+
+SpackmaB@2H106129H MINGW64 /c
+$ cd my data
+bash: cd: too many arguments
+
+SpackmaB@2H106129H MINGW64 /c
+$ cd /c:my data
+bash: cd: too many arguments
+
+SpackmaB@2H106129H MINGW64 /c
+$ dir
+$Recycle.Bin  BOOTNXT                   MSOCache        Program\ Files\ (x86)  Support
+_My\ Data     BOOTSECT.BAK              My\ Data        ProgramData            swapfile.sys
+apps          Documents\ and\ Settings  pagefile.sys    Recovery               System\ Volume\ Information
+boot          hiberfil.sys              PerfLogs        SfDevCluster           Users
+bootmgr       Intel                     Program\ Files  smsbootsect.bak        Windows
+
+SpackmaB@2H106129H MINGW64 /c
+$ cd My\ Data/
+
+SpackmaB@2H106129H MINGW64 /c/My Data
+$ dir
+_IOT  MyPlayProjects
+
+SpackmaB@2H106129H MINGW64 /c/My Data
+$ ls
+_IOT/  MyPlayProjects/
+
+SpackmaB@2H106129H MINGW64 /c/My Data
+$ mkdir MyGitTest
+
+SpackmaB@2H106129H MINGW64 /c/My Data
+$ cd /mygittest
+bash: cd: /mygittest: No such file or directory
+
+SpackmaB@2H106129H MINGW64 /c/My Data
+$ rem My
+MyGitTest/      MyPlayProjects/
+
+SpackmaB@2H106129H MINGW64 /c/My Data
+$ rem My
+MyGitTest/      MyPlayProjects/
+
+SpackmaB@2H106129H MINGW64 /c/My Data
+$ rem MyGitTest/
+bash: rem: command not found
+
+SpackmaB@2H106129H MINGW64 /c/My Data
+$ rm MyGitTest/
+rm: cannot remove 'MyGitTest/': Is a directory
+
+SpackmaB@2H106129H MINGW64 /c/My Data
+$ rm -f MyGitTest/
+rm: cannot remove 'MyGitTest/': Is a directory
+
+SpackmaB@2H106129H MINGW64 /c/My Data
+$ rm -rf MyGitTest/
+
+SpackmaB@2H106129H MINGW64 /c/My Data
+$ mkdir learninggit
+
+SpackmaB@2H106129H MINGW64 /c/My Data
+$ cd learninggit/
+
+SpackmaB@2H106129H MINGW64 /c/My Data/learninggit
+$ ls
+
+SpackmaB@2H106129H MINGW64 /c/My Data/learninggit
+$  git init .
+Initialized empty Git repository in C:/My Data/learninggit/.git/
+
+SpackmaB@2H106129H MINGW64 /c/My Data/learninggit (master)
+$ echo "# learninggit" >> README.md
+
+SpackmaB@2H106129H MINGW64 /c/My Data/learninggit (master)
+$ git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        README.md
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+SpackmaB@2H106129H MINGW64 /c/My Data/learninggit (master)
+$ git add README.md
+
+SpackmaB@2H106129H MINGW64 /c/My Data/learninggit (master)
+$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+
+        new file:   README.md
+
+
+SpackmaB@2H106129H MINGW64 /c/My Data/learninggit (master)
+$ git commit -m "my first comment"
+[master (root-commit) 9b346ef] my first comment
+ Committer: Bryan Spackman <SpackmaB@mpi.govt.nz>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 1 insertion(+)
+ create mode 100644 README.md
+
+SpackmaB@2H106129H MINGW64 /c/My Data/learninggit (master)
+$ git config --global --edit
+
+SpackmaB@2H106129H MINGW64 /c/My Data/learninggit (master)
+$ git commit --amend --reset-author
+[master d3e0ef8] my first comment
+ 1 file changed, 1 insertion(+)
+ create mode 100644 README.md
+
+SpackmaB@2H106129H MINGW64 /c/My Data/learninggit (master)
+$ git log
+commit d3e0ef8981359cde80f9ff9a0bf63bd94a7bd1ce (HEAD -> master)
+Author: Bryan Spackman <Sbryan.spackman@gmail.com>
+Date:   Mon Aug 13 09:35:54 2018 +1200
+
+    my first comment
+
+SpackmaB@2H106129H MINGW64 /c/My Data/learninggit (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+SpackmaB@2H106129H MINGW64 /c/My Data/learninggit (master)
+$ git push -u
+fatal: No configured push destination.
+Either specify the URL from the command-line or configure a remote repository using
+
+    git remote add <name> <url>
+
+and then push using the remote name
+
+    git push <name>
+
+
+SpackmaB@2H106129H MINGW64 /c/My Data/learninggit (master)
+$ git push -u origin master
+fatal: 'origin' does not appear to be a git repository
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+
+SpackmaB@2H106129H MINGW64 /c/My Data/learninggit (master)
+$ git remote add origin https://github.com/BGS69/learninggit.git
+
+SpackmaB@2H106129H MINGW64 /c/My Data/learninggit (master)
+$ git push -u origin master
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 236 bytes | 236.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+To https://github.com/BGS69/learninggit.git
+ * [new branch]      master -> master
+Branch 'master' set up to track remote branch 'master' from 'origin'.
+
+SpackmaB@2H106129H MINGW64 /c/My Data/learninggit (master)
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+nothing to commit, working tree clean
+
+SpackmaB@2H106129H MINGW64 /c/My Data/learninggit (master)
+$ git edit
+git: 'edit' is not a git command. See 'git --help'.
+
+The most similar command is
+        init
+
+SpackmaB@2H106129H MINGW64 /c/My Data/learninggit (master)
+$ git --help
+usage: git [--version] [--help] [-C <path>] [-c <name>=<value>]
+           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]
+           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]
+           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]
+           <command> [<args>]
+
+These are common Git commands used in various situations:
+
+start a working area (see also: git help tutorial)
+   clone      Clone a repository into a new directory
+   init       Create an empty Git repository or reinitialize an existing one
+
+work on the current change (see also: git help everyday)
+   add        Add file contents to the index
+   mv         Move or rename a file, a directory, or a symlink
+   reset      Reset current HEAD to the specified state
+   rm         Remove files from the working tree and from the index
+
+examine the history and state (see also: git help revisions)
+   bisect     Use binary search to find the commit that introduced a bug
+   grep       Print lines matching a pattern
+   log        Show commit logs
+   show       Show various types of objects
+   status     Show the working tree status
+
+grow, mark and tweak your common history
+   branch     List, create, or delete branches
+   checkout   Switch branches or restore working tree files
+   commit     Record changes to the repository
+   diff       Show changes between commits, commit and working tree, etc
+   merge      Join two or more development histories together
+   rebase     Reapply commits on top of another base tip
+   tag        Create, list, delete or verify a tag object signed with GPG
+
+collaborate (see also: git help workflows)
+   fetch      Download objects and refs from another repository
+   pull       Fetch from and integrate with another repository or a local branch
+   push       Update remote refs along with associated objects
+
+'git help -a' and 'git help -g' list available subcommands and some
+concept guides. See 'git help <command>' or 'git help <concept>'
+to read about a specific subcommand or concept.
+
+SpackmaB@2H106129H MINGW64 /c/My Data/learninggit (master)
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+        modified:   README.md
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+SpackmaB@2H106129H MINGW64 /c/My Data/learninggit (master)
+$ git add README.md
+
+SpackmaB@2H106129H MINGW64 /c/My Data/learninggit (master)
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+        modified:   README.md
+
+
+SpackmaB@2H106129H MINGW64 /c/My Data/learninggit (master)
+$ git log
+commit d3e0ef8981359cde80f9ff9a0bf63bd94a7bd1ce (HEAD -> master, origin/master)
+Author: Bryan Spackman <Sbryan.spackman@gmail.com>
+Date:   Mon Aug 13 09:35:54 2018 +1200
+
+    my first comment
+
+SpackmaB@2H106129H MINGW64 /c/My Data/learninggit (master)
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+        modified:   README.md
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+        modified:   README.md
+
+
+SpackmaB@2H106129H MINGW64 /c/My Data/learninggit (master)
+$ git commit -m "commit an update"
+[master d976b9d] commit an update
+ 1 file changed, 1 insertion(+)
+
+SpackmaB@2H106129H MINGW64 /c/My Data/learninggit (master)
+$ git status
+On branch master
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+        modified:   README.md
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+SpackmaB@2H106129H MINGW64 /c/My Data/learninggit (master)
+$ git add README.md
+
+SpackmaB@2H106129H MINGW64 /c/My Data/learninggit (master)
+$ git status
+On branch master
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+        modified:   README.md
+
+
+SpackmaB@2H106129H MINGW64 /c/My Data/learninggit (master)
+$ git diff
+
+SpackmaB@2H106129H MINGW64 /c/My Data/learninggit (master)
+$ git checkout -b bryan
+Switched to a new branch 'bryan'
+M       README.md
+
+SpackmaB@2H106129H MINGW64 /c/My Data/learninggit (bryan)
+$ git log
+commit d976b9d72368baade937f944bc696ceaea9efd1b (HEAD -> bryan, master)
+Author: Bryan Spackman <Sbryan.spackman@gmail.com>
+Date:   Mon Aug 13 09:49:12 2018 +1200
+
+    commit an update
+
+commit d3e0ef8981359cde80f9ff9a0bf63bd94a7bd1ce (origin/master)
+Author: Bryan Spackman <Sbryan.spackman@gmail.com>
+Date:   Mon Aug 13 09:35:54 2018 +1200
+
+    my first comment
+
+SpackmaB@2H106129H MINGW64 /c/My Data/learninggit (bryan)
+$ git checkout -b bryan2
+Switched to a new branch 'bryan2'
+M       README.md
+
+SpackmaB@2H106129H MINGW64 /c/My Data/learninggit (bryan2)
+$ git log
+commit d976b9d72368baade937f944bc696ceaea9efd1b (HEAD -> bryan2, master, bryan)
+Author: Bryan Spackman <Sbryan.spackman@gmail.com>
+Date:   Mon Aug 13 09:49:12 2018 +1200
+
+    commit an update
+
+commit d3e0ef8981359cde80f9ff9a0bf63bd94a7bd1ce (origin/master)
+Author: Bryan Spackman <Sbryan.spackman@gmail.com>
+Date:   Mon Aug 13 09:35:54 2018 +1200
+
+    my first comment
+
+SpackmaB@2H106129H MINGW64 /c/My Data/learninggit (bryan2)
+$ git config --global --edit
+
+SpackmaB@2H106129H MINGW64 /c/My Data/learninggit (bryan2)
+$ git log
+commit d976b9d72368baade937f944bc696ceaea9efd1b (HEAD -> bryan2, master, bryan)
+Author: Bryan Spackman <Sbryan.spackman@gmail.com>
+Date:   Mon Aug 13 09:49:12 2018 +1200
+
+    commit an update
+
+commit d3e0ef8981359cde80f9ff9a0bf63bd94a7bd1ce (origin/master)
+Author: Bryan Spackman <Sbryan.spackman@gmail.com>
+Date:   Mon Aug 13 09:35:54 2018 +1200
+
+    my first comment
+
+SpackmaB@2H106129H MINGW64 /c/My Data/learninggit (bryan2)
+$ git status
+On branch bryan2
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+        modified:   README.md
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+        modified:   README.md
+
+
+SpackmaB@2H106129H MINGW64 /c/My Data/learninggit (bryan2)
+$ git log
+commit d976b9d72368baade937f944bc696ceaea9efd1b (HEAD -> bryan2, master, bryan)
+Author: Bryan Spackman <Sbryan.spackman@gmail.com>
+Date:   Mon Aug 13 09:49:12 2018 +1200
+
+    commit an update
+
+commit d3e0ef8981359cde80f9ff9a0bf63bd94a7bd1ce (origin/master)
+Author: Bryan Spackman <Sbryan.spackman@gmail.com>
+Date:   Mon Aug 13 09:35:54 2018 +1200
+
+    my first comment
+
+SpackmaB@2H106129H MINGW64 /c/My Data/learninggit (bryan2)
+$ git commit --amend --reset-author
+[bryan2 fa19210] commit an update
+ 1 file changed, 2 insertions(+)
+
+SpackmaB@2H106129H MINGW64 /c/My Data/learninggit (bryan2)
+$ git status
+On branch bryan2
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+        modified:   README.md
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+SpackmaB@2H106129H MINGW64 /c/My Data/learninggit (bryan2)
+$ git status
+On branch bryan2
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+        modified:   README.md
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+SpackmaB@2H106129H MINGW64 /c/My Data/learninggit (bryan2)
+$ git commit -m "Upadted Author incorrect spelling and added a comment"
+On branch bryan2
+Changes not staged for commit:
+        modified:   README.md
+
+no changes added to commit
+
+SpackmaB@2H106129H MINGW64 /c/My Data/learninggit (bryan2)
+$ git checkout master
+error: Your local changes to the following files would be overwritten by checkout:
+        README.md
+Please commit your changes or stash them before you switch branches.
+Aborting
+
+SpackmaB@2H106129H MINGW64 /c/My Data/learninggit (bryan2)
+$ git commit -m "comit"
+On branch bryan2
+Changes not staged for commit:
+        modified:   README.md
+
+no changes added to commit
+
+SpackmaB@2H106129H MINGW64 /c/My Data/learninggit (bryan2)
+$ git add README.md
+
+SpackmaB@2H106129H MINGW64 /c/My Data/learninggit (bryan2)
+$ git status
+On branch bryan2
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+        modified:   README.md
+
+
+SpackmaB@2H106129H MINGW64 /c/My Data/learninggit (bryan2)
+$ git checkout master
+error: Your local changes to the following files would be overwritten by checkout:
+        README.md
+Please commit your changes or stash them before you switch branches.
+Aborting
+
+SpackmaB@2H106129H MINGW64 /c/My Data/learninggit (bryan2)
+$ git push -u origin master
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Writing objects: 100% (3/3), 286 bytes | 286.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+To https://github.com/BGS69/learninggit.git
+   d3e0ef8..d976b9d  master -> master
+Branch 'master' set up to track remote branch 'master' from 'origin'.
+
+SpackmaB@2H106129H MINGW64 /c/My Data/learninggit (bryan2)
+$ rm -f bryan2
+
+SpackmaB@2H106129H MINGW64 /c/My Data/learninggit (bryan2)
+$ status
+bash: status: command not found
+
+SpackmaB@2H106129H MINGW64 /c/My Data/learninggit (bryan2)
+$ git status
+On branch bryan2
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+        modified:   README.md
+
+
+SpackmaB@2H106129H MINGW64 /c/My Data/learninggit (bryan2)
+$ git checkout -b bryan
+fatal: A branch named 'bryan' already exists.
+
+SpackmaB@2H106129H MINGW64 /c/My Data/learninggit (bryan2)
+$ git checkin bryan2
+git: 'checkin' is not a git command. See 'git --help'.
+
+The most similar commands are
+        check-ignore
+        checkout
+
+SpackmaB@2H106129H MINGW64 /c/My Data/learninggit (bryan2)
+$ git branch -a
+  bryan
+* bryan2
+  master
+  remotes/origin/master
+
+SpackmaB@2H106129H MINGW64 /c/My Data/learninggit (bryan2)
+$ git branch bryan
+fatal: A branch named 'bryan' already exists.
+
+SpackmaB@2H106129H MINGW64 /c/My Data/learninggit (bryan2)
+$ git checkout bryan
+error: Your local changes to the following files would be overwritten by checkout:
+        README.md
+Please commit your changes or stash them before you switch branches.
+Aborting
+
+SpackmaB@2H106129H MINGW64 /c/My Data/learninggit (bryan2)
+$ git add README.md
+.git/      README.md
+
+SpackmaB@2H106129H MINGW64 /c/My Data/learninggit (bryan2)
+$ git add README.md
+
+SpackmaB@2H106129H MINGW64 /c/My Data/learninggit (bryan2)
+$ git checkout bryan
+error: Your local changes to the following files would be overwritten by checkout:
+        README.md
+Please commit your changes or stash them before you switch branches.
+Aborting
+
+SpackmaB@2H106129H MINGW64 /c/My Data/learninggit (bryan2)
+$
